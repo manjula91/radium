@@ -5,8 +5,9 @@ import type {PluginConfig, PluginResult} from './index';
 import {getPrefixedStyle} from '../prefixer';
 
 export default function prefixPlugin(
-  {config, style}: PluginConfig // eslint-disable-line no-shadow
+  {ExecutionEnvironment, config, style}: PluginConfig // eslint-disable-line no-shadow
 ): PluginResult {
-  const newStyle = getPrefixedStyle(style, config.userAgent);
+  const canUseDOM = ExecutionEnvironment && ExecutionEnvironment.canUseDOM;
+  const newStyle = getPrefixedStyle(style, canUseDOM, config.userAgent);
   return {style: newStyle};
 }

@@ -852,7 +852,7 @@ describe('Radium blackbox tests', () => {
     });
   });
 
-  describe('inline prefixes', () => {
+describe.only('inline prefixes', () => {
     let Component;
 
     beforeEach(() => {

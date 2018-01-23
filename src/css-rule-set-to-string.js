@@ -24,7 +24,10 @@ export default function cssRuleSetToString(
 
   const rulesWithPx = mapObject(rules, (value, key) =>
     appendPxIfNeeded(key, value));
-  const prefixedRules = getPrefixedStyle(rulesWithPx, userAgent);
+
+  const TODO_CAN_USE_DOM = false; // TODO: UNWIND THIS!!!
+
+  const prefixedRules = getPrefixedStyle(rulesWithPx, TODO_CAN_USE_DOM, userAgent);
   const cssPrefixedRules = camelCasePropsToDashCase(prefixedRules);
   const serializedRules = createMarkupForStyles(cssPrefixedRules);
 

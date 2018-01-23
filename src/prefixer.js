@@ -81,9 +81,10 @@ export function getPrefixedKeyframes(userAgent?: ?string): string {
 
 // Returns a new style object with vendor prefixes added to property names
 // and values.
-export function getPrefixedStyle(style: Object, userAgent?: ?string): Object {
+export function getPrefixedStyle(style: Object, canUseDOM: bool, userAgent?: ?string): Object {
   const styleWithFallbacks = transformValues(style);
   const prefixer = getPrefixer(userAgent);
   const prefixedStyle = prefixer.prefix(styleWithFallbacks);
+  console.log("TODO HERE canUseDOM", canUseDOM);
   return prefixedStyle;
 }

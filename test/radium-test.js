@@ -13,7 +13,7 @@ describe('Radium blackbox SSR tests', () => {
     expect(instance.state).to.deep.equal({_radiumStyleState: {}});
   });
 
-  describe('inline prefixes', () => {
+  describe.only('inline prefixes', () => {
     let Wrapped;
 
     beforeEach(() => {
